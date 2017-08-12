@@ -25,36 +25,36 @@ import com.he.myfgo.model.User;
 import com.he.myfgo.tool.FileTool;
 
 /**
- * fgoµÇÂ¼´°
+ * fgoç™»å½•çª—
  * 
  * @author luna
  * @version 1.0
  */
 public class FrmLogin extends JFrame{
-	/**fgoÕËºÅ*/
+	/**fgoè´¦å·*/
 	private JLabel lblLoginId = null;
-	/**fgoÃÜÂë*/
+	/**fgoå¯†ç */
 	private JLabel lblPassword = null;
-	/**fgoºÅÂëtxt*/
+	/**fgoå·ç txt*/
 	private JTextField txtLoginId = null;
-	/**fgoÃÜÂëtxt*/
+	/**fgoå¯†ç txt*/
 	private JPasswordField txtPassword = null;
-	/**µÇÂ¼°´Å¥*/
+	/**ç™»å½•æŒ‰é’®*/
 	private JButton btnLogin = null;
-	/**È¡Ïû°´Å¥*/
+	/**å–æ¶ˆæŒ‰é’®*/
 	private JButton btnCancel = null;
-	/**ÉêÇëºÅÂë*/
+	/**ç”³è¯·å·ç */
 	private JLabel lblRegNewId = null;
-	/**Íü¼ÇÃÜÂë*/
+	/**å¿˜è®°å¯†ç */
 	private JLabel lblForgetPwd = null;
-	/**Í¼±ê*/
+	/**å›¾æ ‡*/
 	private JLabel lblImageIcon = null;
 	
 	
 	public FrmLogin() {
 		super();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("fgoµÇÂ¼");
+		setTitle("fgoç™»å½•");
 		setBackground();
 		initComponents();
 		setSize(320, 200);
@@ -64,12 +64,12 @@ public class FrmLogin extends JFrame{
 	}
 
 	public void initComponents() {
-		JPanel contentPane = (JPanel) getContentPane();	//»ñµÃÄÚÈİÃæ°å¶ÔÏó
-		contentPane.setLayout(null);//ÉèÖÃÄÚÈİÃæ°åµÄ²¼¾Ö·½Ê½ÎªÎŞ²¼¾Ö
-		//ÉèÖÃ¿Ø¼şµÄ±ß½ç£ºx¡¢y£¬¿íºÍ¸ß
-		lblLoginId = new JLabel("fgoÕËºÅ£º");
+		JPanel contentPane = (JPanel) getContentPane();	//è·å¾—å†…å®¹é¢æ¿å¯¹è±¡
+		contentPane.setLayout(null);//è®¾ç½®å†…å®¹é¢æ¿çš„å¸ƒå±€æ–¹å¼ä¸ºæ— å¸ƒå±€
+		//è®¾ç½®æ§ä»¶çš„è¾¹ç•Œï¼šxã€yï¼Œå®½å’Œé«˜
+		lblLoginId = new JLabel("fgoè´¦å·ï¼š");
 		lblLoginId.setBounds(30, 90, 80, 20);
-		lblPassword = new JLabel("fgoÃÜÂë£º");
+		lblPassword = new JLabel("fgoå¯†ç ï¼š");
 		lblPassword.setBounds(30, 125, 80, 20);
 		txtLoginId = new JTextField();
 		txtLoginId.setBounds(90, 90, 120, 20);
@@ -78,44 +78,44 @@ public class FrmLogin extends JFrame{
 		lblImageIcon = new JLabel(new ImageIcon("images/icon.jpg"));
 		
 		
-		//Õâ¶Î¿ÉÒÔ¼ÇÒ»ÏÂ
-		lblRegNewId = new JLabel("<html><u>ÉêÇëÕËºÅ</u></html>");
+		//è¿™æ®µå¯ä»¥è®°ä¸€ä¸‹
+		lblRegNewId = new JLabel("<html><u>ç”³è¯·è´¦å·</u></html>");
 		lblRegNewId.setBounds(225, 90, 80, 20);
-		lblRegNewId.setToolTipText("µã»÷ÉêÇëĞÂºÅÂë");
-		//ÉèÖÃÎÄ×ÖÑÕÉ«
+		lblRegNewId.setToolTipText("ç‚¹å‡»ç”³è¯·æ–°å·ç ");
+		//è®¾ç½®æ–‡å­—é¢œè‰²
 		lblRegNewId.setForeground(Color.BLUE);
-		lblRegNewId.setCursor(new Cursor(Cursor.HAND_CURSOR));//cursorÊó±ê¹â±ê
+		lblRegNewId.setCursor(new Cursor(Cursor.HAND_CURSOR));//cursoré¼ æ ‡å…‰æ ‡
 		
-		lblForgetPwd = new JLabel("<html><u>Íü¼ÇÃÜÂë</u></html>");
+		lblForgetPwd = new JLabel("<html><u>å¿˜è®°å¯†ç </u></html>");
 		lblForgetPwd.setBounds(225, 120, 80, 20);
-		//ÉèÖÃÎÄ×ÖÑÕÉ«
+		//è®¾ç½®æ–‡å­—é¢œè‰²
 		lblForgetPwd.setForeground(Color.BLUE);
 		lblForgetPwd.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		//°´Å¥µÄ±³¾°Í¼Æ¬¶ÔÏó
+		//æŒ‰é’®çš„èƒŒæ™¯å›¾ç‰‡å¯¹è±¡
 		ImageIcon iconButton = new ImageIcon("images/button.jpg");
 		
-		btnLogin = new JButton("µÇÂ¼");
+		btnLogin = new JButton("ç™»å½•");
 		btnLogin.setBounds(145, 165, 72, 22);		
 		btnLogin.setIcon(iconButton);
-		//ÉèÖÃÎÄ×ÖÏÔÊ¾µÄÎ»ÖÃÎª¾ÓÖĞ
+		//è®¾ç½®æ–‡å­—æ˜¾ç¤ºçš„ä½ç½®ä¸ºå±…ä¸­
 		btnLogin.setHorizontalTextPosition(SwingConstants.CENTER);
-		//ÉèÖÃÍ¼Æ¬ÌîÂú°´Å¥ËùÔÚµÄÇøÓò  
+		//è®¾ç½®å›¾ç‰‡å¡«æ»¡æŒ‰é’®æ‰€åœ¨çš„åŒºåŸŸ  
 		btnLogin.setContentAreaFilled(false);
-		//ÉèÖÃ¿Ø¼şÊÇ·ñÍ¸Ã÷£¬trueÎª²»Í¸Ã÷£¬falseÎªÍ¸Ã÷  
+		//è®¾ç½®æ§ä»¶æ˜¯å¦é€æ˜ï¼Œtrueä¸ºä¸é€æ˜ï¼Œfalseä¸ºé€æ˜  
 		btnLogin.setOpaque(false);
-		//ÉèÖÃÊó±ê
+		//è®¾ç½®é¼ æ ‡
 		btnLogin.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		
-		btnCancel = new JButton("È¡Ïû");
+		btnCancel = new JButton("å–æ¶ˆ");
 		btnCancel.setBounds(225, 165, 72, 22);
 		btnCancel.setIcon(iconButton);
-		//ÉèÖÃÎÄ×ÖÏÔÊ¾µÄÎ»ÖÃÎª¾ÓÖĞ
+		//è®¾ç½®æ–‡å­—æ˜¾ç¤ºçš„ä½ç½®ä¸ºå±…ä¸­
 		btnCancel.setHorizontalTextPosition(SwingConstants.CENTER);
-		//ÉèÖÃÍ¼Æ¬ÌîÂú°´Å¥ËùÔÚµÄÇøÓò  
+		//è®¾ç½®å›¾ç‰‡å¡«æ»¡æŒ‰é’®æ‰€åœ¨çš„åŒºåŸŸ  
 		btnCancel.setContentAreaFilled(false);
-		//ÉèÖÃ¿Ø¼şÊÇ·ñÍ¸Ã÷£¬trueÎª²»Í¸Ã÷£¬falseÎªÍ¸Ã÷  
+		//è®¾ç½®æ§ä»¶æ˜¯å¦é€æ˜ï¼Œtrueä¸ºä¸é€æ˜ï¼Œfalseä¸ºé€æ˜  
 		btnCancel.setOpaque(false);
-		//ÉèÖÃÊó±ê
+		//è®¾ç½®é¼ æ ‡
 		btnCancel.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		
 		lblImageIcon.setBounds(80, 5, 150, 67);
@@ -130,7 +130,7 @@ public class FrmLogin extends JFrame{
 		contentPane.add(btnCancel);
 		contentPane.add(lblImageIcon);
 		
-		/**µãÉêÇëÕËºÅ£¬Ìø³öÉêÇëÕËºÅfrmRegister*/
+		/**ç‚¹ç”³è¯·è´¦å·ï¼Œè·³å‡ºç”³è¯·è´¦å·frmRegister*/
 		lblRegNewId.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -145,7 +145,7 @@ public class FrmLogin extends JFrame{
 				btnLogin_actionPerformed(e);			
 			}
 		});
-		/**È¡Ïû°´Å¥ÍË³ö³ÌĞò*/
+		/**å–æ¶ˆæŒ‰é’®é€€å‡ºç¨‹åº*/
 		btnCancel.addActionListener(new ActionListener() {
 			
 			@Override
@@ -155,10 +155,10 @@ public class FrmLogin extends JFrame{
 		});					
 	}
 	
-	/**µãµÇÂ¼Ê±µÄaction*/
+	/**ç‚¹ç™»å½•æ—¶çš„action*/
 	protected void btnLogin_actionPerformed(ActionEvent e) {
 		boolean isSuccess = false;
-		//1.ÄÃµ½Êı¾İÈ¥ºÍUserList¶Ô±È
+		//1.æ‹¿åˆ°æ•°æ®å»å’ŒUserListå¯¹æ¯”
 		String strId = txtLoginId.getText();
 		String strPassword= new String(txtPassword.getPassword());
 		User userlogin = new User(strId,strPassword);
@@ -172,46 +172,46 @@ public class FrmLogin extends JFrame{
 			}
 		}	
 		if (isSuccess) {
-			JOptionPane.showMessageDialog(me, "µÇÂ¼³É¹¦£¡");
-			// userloginÎªµÇÂ¼µÄ¶ÔÏó£¬½«Ëü´«µ½ÏÂ¸ö½çÃæÈ¥
+			JOptionPane.showMessageDialog(me, "ç™»å½•æˆåŠŸï¼");
+			// userloginä¸ºç™»å½•çš„å¯¹è±¡ï¼Œå°†å®ƒä¼ åˆ°ä¸‹ä¸ªç•Œé¢å»
 			FrmMasterFace fmMasterFace=new FrmMasterFace(userlogin.getId());
-			//µÇÂ¼³É¹¦Òş²Ø±¾´°Ìå
+			//ç™»å½•æˆåŠŸéšè—æœ¬çª—ä½“
 			me.setVisible(false);									
 		}
 		else{
-			JOptionPane.showMessageDialog(me, "ÕËºÅ»òÃÜÂë´íÎó£¡");
+			JOptionPane.showMessageDialog(me, "è´¦å·æˆ–å¯†ç é”™è¯¯ï¼");
 		}
 		
 	}
 
-	/**µã»÷È¡ÏûÊ±ºòµÄÊÂ¼ş*/
+	/**ç‚¹å‡»å–æ¶ˆæ—¶å€™çš„äº‹ä»¶*/
 	protected void btnCancel_actionPerformed(ActionEvent e) {
 		System.exit(0);
 		
 	}
 	/**
-	 * ±³¾°Í¼Æ¬
+	 * èƒŒæ™¯å›¾ç‰‡
 	 */
 	public void setBackground(){
 		ImageIcon background = new ImageIcon("images/background.jpg");
 		JLabel lblBackground = new JLabel(background);
-		//ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		//åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(
 				lblBackground, 
 				new Integer(Integer.MIN_VALUE)
 		);
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		//½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		//å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		//((JPanel)getContentPane()).setOpaque(false);
 		JPanel contentPane = (JPanel)getContentPane();
 		contentPane.setOpaque(false);
 	}
-	/**½çÃæ¾ÓÖĞ*/
+	/**ç•Œé¢å±…ä¸­*/
 	public void setCenter(){
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		//»ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		//è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		//µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		//å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int)((screenSize.getWidth() - currSize.getWidth()) / 2), (int)((screenSize.getHeight() - currSize.getWidth())/2));
 	}

@@ -24,37 +24,37 @@ import com.he.myfgo.model.User;
 import com.he.myfgo.tool.FileTool;
 
 /**
- * fgo²é¿´··Âô¿¨Æ¬½çÃæ
+ * fgoæŸ¥çœ‹è´©å–å¡ç‰‡ç•Œé¢
  * 
  * @author luna
  * @version 1.0
  */
 public class FrmIndexCard extends JFrame {
-	/** ÄÃµ½ÉÏ¸ö½çÃæµÄid */
-	private String loginId = "test";// ÕâÀïÏÈ³õÊ¼10000ºÅÓÃ»§£¬ÕâÑù·½±ãÑéÖ¤
-	/** userÊı¾İ */
+	/** æ‹¿åˆ°ä¸Šä¸ªç•Œé¢çš„id */
+	private String loginId = "test";// è¿™é‡Œå…ˆåˆå§‹10000å·ç”¨æˆ·ï¼Œè¿™æ ·æ–¹ä¾¿éªŒè¯
+	/** useræ•°æ® */
 	private User user = new User();
-	/** ëŞ */
+	/** æœ• */
 	private FrmIndexCard me = this;
-	/** »¬¶¯¹öÂÖ */
-	private JScrollPane scrollPane = new JScrollPane();// Ã»ÓĞ¼Ó³É¹¦
-	/** ÓÃ»§¿¨Æ¬¼¯ºÏ */
+	/** æ»‘åŠ¨æ»šè½® */
+	private JScrollPane scrollPane = new JScrollPane();// æ²¡æœ‰åŠ æˆåŠŸ
+	/** ç”¨æˆ·å¡ç‰‡é›†åˆ */
 	private List<Card> cardList = new ArrayList<Card>();
 
-	/** ¿¨Æ¬°´Å¥¼¯ºÏ */
+	/** å¡ç‰‡æŒ‰é’®é›†åˆ */
 	private JButton[] btnCard = null;
-	/** ·µ»ØÉÏÒ»¼¶°´Å¥ */
-	private JButton btnBack = new JButton("·µ»ØÉÏÒ»¼¶");
-	/** ÅÅĞò°´Å¥ */
-	private JButton btnSort = new JButton("ÅÅĞò");
+	/** è¿”å›ä¸Šä¸€çº§æŒ‰é’® */
+	private JButton btnBack = new JButton("è¿”å›ä¸Šä¸€çº§");
+	/** æ’åºæŒ‰é’® */
+	private JButton btnSort = new JButton("æ’åº");
 
-	private JButton btnSellAll = new JButton("Ò»¼ü··Âô");
+	private JButton btnSellAll = new JButton("ä¸€é”®è´©å–");
 
 	private int n = 0;
 
 	public FrmIndexCard() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("²é¿´/··Âô¿¨Æ¬");
+		setTitle("æŸ¥çœ‹/è´©å–å¡ç‰‡");
 		initComponents();
 		setSize(580, 600);
 		setCenter();
@@ -63,11 +63,11 @@ public class FrmIndexCard extends JFrame {
 	}
 
 	/**
-	 * ¹¹Ôìº¯ÊıÖØÔØ ÎªÁËÔÚnewµÄÊ±ºò¾Í°Ñid´«½øÀ´ Êµ¼Ê²Ù×÷ÓÃ
+	 * æ„é€ å‡½æ•°é‡è½½ ä¸ºäº†åœ¨newçš„æ—¶å€™å°±æŠŠidä¼ è¿›æ¥ å®é™…æ“ä½œç”¨
 	 */
 	public FrmIndexCard(String id) {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("²é¿´/··Âô¿¨Æ¬");
+		setTitle("æŸ¥çœ‹/è´©å–å¡ç‰‡");
 		setLoginId(id);
 		initComponents();
 		setSize(580, 600);
@@ -84,7 +84,7 @@ public class FrmIndexCard extends JFrame {
 
 		cardList = FileTool.loadCard(user);
 		setCardImage(contentPane, cardList);
-		// ·µ»Ø°´Å¥
+		// è¿”å›æŒ‰é’®
 		btnBack.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -100,13 +100,13 @@ public class FrmIndexCard extends JFrame {
 					money=money+cardList.get(i).getMoney();
 				}				
 				int result = JOptionPane.showConfirmDialog(null,
-						new String("··Âô»ñµÃ" +money+ "µã"), "··Âô¿¨Æ¬",
+						new String("è´©å–è·å¾—" +money+ "ç‚¹"), "è´©å–å¡ç‰‡",
 						JOptionPane.YES_NO_OPTION);
 				if(result==0){
 					user.setMoney(user.getMoney() +money);
 					cardList.removeAll(cardList);
 					FileTool.deletCard(user);
-					// ½«userµÄ¼Û¸ñ´æÈëÀïÃæ
+					// å°†userçš„ä»·æ ¼å­˜å…¥é‡Œé¢
 					List<User> userList = new ArrayList<User>();
 					userList = FileTool.loadUser();
 					for (int i = 0; i < userList.size(); i++) {
@@ -131,22 +131,22 @@ public class FrmIndexCard extends JFrame {
 			btnCard[n].addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// int result=JOptionPane.showConfirmDialog(null,"··Âô»ñµÃ20µã");
+					// int result=JOptionPane.showConfirmDialog(null,"è´©å–è·å¾—20ç‚¹");
 					int result = JOptionPane.showConfirmDialog(null,
-							new String("··Âô»ñµÃ" + (cardList.get(choice).getMoney()) + "µã"), "··Âô¿¨Æ¬",
+							new String("è´©å–è·å¾—" + (cardList.get(choice).getMoney()) + "ç‚¹"), "è´©å–å¡ç‰‡",
 							JOptionPane.YES_NO_OPTION);
 
-					// ÔÙĞ´ÈëÎÄ¼ş
+					// å†å†™å…¥æ–‡ä»¶
 					if (result == 0) {
 						user.setMoney(user.getMoney() + cardList.get(choice).getMoney());
 						cardList.remove(choice);
-						// ½«É¾³ıµÄ¿¨Æ¬´æÈëtxtÎÄ¼şµ±ÖĞ
+						// å°†åˆ é™¤çš„å¡ç‰‡å­˜å…¥txtæ–‡ä»¶å½“ä¸­
 						if (cardList.isEmpty()) {
 							FileTool.deletCard(user);
 						} else {
 							FileTool.saveCard(cardList, user, false);
 						}
-						// ½«userµÄ¼Û¸ñ´æÈëÀïÃæ
+						// å°†userçš„ä»·æ ¼å­˜å…¥é‡Œé¢
 						List<User> userList = new ArrayList<User>();
 						userList = FileTool.loadUser();
 						for (int i = 0; i < userList.size(); i++) {
@@ -165,7 +165,7 @@ public class FrmIndexCard extends JFrame {
 	}
 
 	/**
-	 * ÔÚ×ó±ßÈİÆ÷ÖĞÏÔÊ¾ÓÒ±ßÊı×éÖĞµÄ¶ÔÏóÄÚÈİ ÈİÆ÷ÒªÇóÊÇÎŞ²¼¾Ö
+	 * åœ¨å·¦è¾¹å®¹å™¨ä¸­æ˜¾ç¤ºå³è¾¹æ•°ç»„ä¸­çš„å¯¹è±¡å†…å®¹ å®¹å™¨è¦æ±‚æ˜¯æ— å¸ƒå±€
 	 * 
 	 * @param pane
 	 * @param userList
@@ -178,7 +178,7 @@ public class FrmIndexCard extends JFrame {
 				btnCard[i] = null;
 			}
 		}
-		// ¸ù¾İÍ¼Æ¬¼¯ºÏÏÔÊ¾¶ÔÓ¦µÄÍ¼Æ¬
+		// æ ¹æ®å›¾ç‰‡é›†åˆæ˜¾ç¤ºå¯¹åº”çš„å›¾ç‰‡
 		btnCard = new JButton[cardList.size()];
 		int i = 0;
 		for (i = 0; i < cardList.size(); i++) {
@@ -228,7 +228,7 @@ public class FrmIndexCard extends JFrame {
 
 		update(getGraphics());
 		deleImage(pane);
-		// ÅÅĞò°´Å¥
+		// æ’åºæŒ‰é’®
 		btnSort.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -242,30 +242,30 @@ public class FrmIndexCard extends JFrame {
 
 	}
 
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
 
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/indexcarbackground.jpg");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 
 	/**
-	 * ¸ù¾İid·µ»ØÕâ¸öuser
+	 * æ ¹æ®idè¿”å›è¿™ä¸ªuser
 	 */
 	private User getUser(String id) {
 		User user1 = new User();

@@ -11,33 +11,33 @@ import javax.swing.JPanel;
 
 import com.he.myfgo.model.Card;
 /**
- * fgo¿¨Æ¬ÏêÏ¸Ò³Ãæ£¨¹¦ÄÜ¿ª·¢£©
- * Ã¿ÕÅ¿¨Æ¬¿ÉÒÔ¿´ÏêÇé
+ * fgoå¡ç‰‡è¯¦ç»†é¡µé¢ï¼ˆåŠŸèƒ½å¼€å‘ï¼‰
+ * æ¯å¼ å¡ç‰‡å¯ä»¥çœ‹è¯¦æƒ…
  * @author luna
  * @version 1.0
  */
 public class FrmCardInfo extends JFrame{
-	private int cardId = 1;//Ä¬ÈÏÎª1
-	/**×ó²àÍ¼Æ¬*/
+	private int cardId = 1;//é»˜è®¤ä¸º1
+	/**å·¦ä¾§å›¾ç‰‡*/
 	private JLabel lblImage = null;
-	//¸ù¾İ²»Í¬µÄ¿¨Æ¬µÈ¼¶ÏÔÊ¾²»Í¬µÄÃæ°å
-	/**R¿¨µÄÃæ°å*/
+	//æ ¹æ®ä¸åŒçš„å¡ç‰‡ç­‰çº§æ˜¾ç¤ºä¸åŒçš„é¢æ¿
+	/**Rå¡çš„é¢æ¿*/
 	private JPanel jpnInfoR = new JPanel();
-	/**R¿¨µÄ²ÎÊı*/
+	/**Rå¡çš„å‚æ•°*/
 	private JLabel lblInfoR = new JLabel(new ImageIcon("images/Rcard.jpg"));
-	/**SR¿¨µÄÃæ°å*/
+	/**SRå¡çš„é¢æ¿*/
 	private JPanel jpnInfoSR = new JPanel();
-	/**SR¿¨µÄ²ÎÊı*/
+	/**SRå¡çš„å‚æ•°*/
 	private JLabel lblInfoSR = new JLabel(new ImageIcon("images/SRcard.jpg"));
-	/**SSR¿¨µÄÃæ°å*/
+	/**SSRå¡çš„é¢æ¿*/
 	private JPanel jpnInfoSSR = new JPanel();
-	/**SSR¿¨µÄ²ÎÊı*/
+	/**SSRå¡çš„å‚æ•°*/
 	private JLabel lblInfoSSR = new JLabel(new ImageIcon("images/SSRcard.jpg"));
-	/**·µ»ØÉÏ¸öÒ³Ãæ*/
-	private JButton btnBack = new JButton("·µ»ØÉÏ¸öÒ³Ãæ");
+	/**è¿”å›ä¸Šä¸ªé¡µé¢*/
+	private JButton btnBack = new JButton("è¿”å›ä¸Šä¸ªé¡µé¢");
 	public FrmCardInfo() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("µ¥³éÖ÷Ò³Ãæ");
+		setTitle("å•æŠ½ä¸»é¡µé¢");
 		initComponents();
 		setSize(400, 300);
 		setCenter();
@@ -45,7 +45,7 @@ public class FrmCardInfo extends JFrame{
 	}
 	public FrmCardInfo(int cardId) {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("µ¥³éÖ÷Ò³Ãæ");
+		setTitle("å•æŠ½ä¸»é¡µé¢");
 		this.cardId=cardId;
 		initComponents();
 		setSize(400, 300);
@@ -93,25 +93,25 @@ public class FrmCardInfo extends JFrame{
 		}
 		
 	}
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
 
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/gettencardbackground.jpg");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 	public static void main(String[] args) {

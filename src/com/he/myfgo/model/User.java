@@ -2,37 +2,37 @@ package com.he.myfgo.model;
 
 import com.he.myfgo.model.User;
 /**
- * fgoµÄÓÃ»§Àà
+ * fgoçš„ç”¨æˆ·ç±»
  * 
  * @author luna
  * @version 1.0
  */
 public class User {
-	/** µÇÂ¼ÕËºÅ */
+	/** ç™»å½•è´¦å· */
 	private String id;
-	/** ÃÜÂë */
+	/** å¯†ç  */
 	private String password;
-	/** ÕæÊµĞÕÃû */
+	/** çœŸå®å§“å */
 	private String name;
-	/** ÄêÁä */
+	/** å¹´é¾„ */
 	private int age;
-	/** ĞÔ±ğ */
+	/** æ€§åˆ« */
 	private String sex;
-	/** ÊÖ»úºÅÂë */
+	/** æ‰‹æœºå·ç  */
 	private String phoNum;
-	/** êÇ³Æ */
+	/** æ˜µç§° */
 	private String nickName;
 
-	/** ÓÊÏä */
+	/** é‚®ç®± */
 	private String email;
 
-	/** Ç® */
+	/** é’± */
 	private int money;
 
 	public User() {
 	}
 
-	/** ¸³ÖµÓÃµÄ¹¹Ôìº¯Êı */
+	/** èµ‹å€¼ç”¨çš„æ„é€ å‡½æ•° */
 	public User(String id, String password, String name, int age, String sex, String phoNum, String nickName,
 			String email, int money) {
 		super();
@@ -46,14 +46,14 @@ public class User {
 		this.email = email;
 		this.money = money;
 	}
-	/**µÇÂ¼ÓÃµÄ¹¹Ôìº¯Êı*/
+	/**ç™»å½•ç”¨çš„æ„é€ å‡½æ•°*/
 	public User(String id, String password) {
 		super();
 		this.id = id;
 		this.password = password;
 	}
 
-	/** ²âÊÔÓÃµÄ¹¹Ôìº¯Êı */
+	/** æµ‹è¯•ç”¨çš„æ„é€ å‡½æ•° */
 	public User(String id, String name, int age, String sex, String nickName) {
 		this.id = id;
 		this.name = name;
@@ -74,14 +74,14 @@ public class User {
 	}
 
 	/**
-	 * ÖØĞ´ÊµÌå¶ÔÏóµÄequals·½·¨£¬·½±ãÅĞ¶ÏÁ½¸ö¶ÔÏóÊÇÏàµÈµÄ ÎÒÃÇ¹æ¶¨£ºÁ½¸ö¶ÔÏóidºÍÃÜÂëÒ»Ò»¶ÔÓ¦£¬Ö¤Ã÷Á½¸ö¶ÔÏóÊÇÏàµÈµÄ
+	 * é‡å†™å®ä½“å¯¹è±¡çš„equalsæ–¹æ³•ï¼Œæ–¹ä¾¿åˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡æ˜¯ç›¸ç­‰çš„ æˆ‘ä»¬è§„å®šï¼šä¸¤ä¸ªå¯¹è±¡idå’Œå¯†ç ä¸€ä¸€å¯¹åº”ï¼Œè¯æ˜ä¸¤ä¸ªå¯¹è±¡æ˜¯ç›¸ç­‰çš„
 	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null || !(obj instanceof User)) {
 			return false;
 		}
-		User user = (User) obj;// ÉÏÃæifÅĞ¶ÏÎªÁËÕâ¾ä»°µÄÖ´ĞĞÕıÈ·
+		User user = (User) obj;// ä¸Šé¢ifåˆ¤æ–­ä¸ºäº†è¿™å¥è¯çš„æ‰§è¡Œæ­£ç¡®
 		if (password.equals(user.getPassword()) && id.equals(user.getId())) {
 			return true;
 		}

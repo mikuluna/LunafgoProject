@@ -22,20 +22,20 @@ import com.he.myfgo.tool.FileTool;
 import com.he.myfgo.tool.ProbabilityTool;
 
 /**
- * µ¥³é½çÃæ
+ * å•æŠ½ç•Œé¢
  * @author luna
  * @version 1.0
  */
 public class FrmGetOneCard extends JFrame {
-	/** ³é¿¨Í¼Æ¬ */
+	/** æŠ½å¡å›¾ç‰‡ */
 	private JButton btnImage = null;
-	/** ·µ»ØÉÏÒ»¼¶°´Å¥ */
-	private JButton btnBack = new JButton("·µ»ØÉÏÒ»¼¶");
-	/** ÄÃµ½ÉÏ¸ö½çÃæµÄid */
-	private String loginId = "10000";// ÕâÀïÏÈ³õÊ¼10000ºÅÓÃ»§£¬ÕâÑù·½±ãÑéÖ¤
-	/** userÊı¾İ */
+	/** è¿”å›ä¸Šä¸€çº§æŒ‰é’® */
+	private JButton btnBack = new JButton("è¿”å›ä¸Šä¸€çº§");
+	/** æ‹¿åˆ°ä¸Šä¸ªç•Œé¢çš„id */
+	private String loginId = "10000";// è¿™é‡Œå…ˆåˆå§‹10000å·ç”¨æˆ·ï¼Œè¿™æ ·æ–¹ä¾¿éªŒè¯
+	/** useræ•°æ® */
 	private User user = new User();
-	/** ¸ù¾İ¸ÅÂÊÉú³ÉµÄcardId */
+	/** æ ¹æ®æ¦‚ç‡ç”Ÿæˆçš„cardId */
 	private int i = ProbabilityTool.cardId();
 
 	private FrmGetOneCard me = this;
@@ -43,7 +43,7 @@ public class FrmGetOneCard extends JFrame {
 
 	public FrmGetOneCard() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("µ¥³éÖ÷Ò³Ãæ");
+		setTitle("å•æŠ½ä¸»é¡µé¢");
 		initComponents();
 		setSize(200, 360);
 		setCenter();
@@ -52,11 +52,11 @@ public class FrmGetOneCard extends JFrame {
 	}
 
 	/**
-	 * ¹¹Ôìº¯ÊıÖØÔØ ÎªÁËÔÚnewµÄÊ±ºò¾Í°Ñid´«½øÀ´ Êµ¼Ê²Ù×÷ÓÃ
+	 * æ„é€ å‡½æ•°é‡è½½ ä¸ºäº†åœ¨newçš„æ—¶å€™å°±æŠŠidä¼ è¿›æ¥ å®é™…æ“ä½œç”¨
 	 */
 	public FrmGetOneCard(String id) {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("³é¿¨Ö÷Ò³Ãæ");
+		setTitle("æŠ½å¡ä¸»é¡µé¢");
 		setLoginId(id);
 		initComponents();
 		setSize(200, 360);
@@ -86,7 +86,7 @@ public class FrmGetOneCard extends JFrame {
 		contentPane.add(btnImage);
 		contentPane.add(btnBack);
 
-		// ½«³éÈëµÄ¿¨Æ¬´æÈëtxtÎÄ¼şµ±ÖĞ
+		// å°†æŠ½å…¥çš„å¡ç‰‡å­˜å…¥txtæ–‡ä»¶å½“ä¸­
 		List<Card> cardList = null;
 		cardList = FileTool.loadCard(user);
 		if (cardList == null) {
@@ -98,7 +98,7 @@ public class FrmGetOneCard extends JFrame {
 			cardList.add(new Card(i));
 			FileTool.saveCard(cardList, user, false);
 		}
-		// ½«userµÄ¼Û¸ñ´æÈëÀïÃæ
+		// å°†userçš„ä»·æ ¼å­˜å…¥é‡Œé¢
 		user.setMoney(user.getMoney() - 10);
 		List<User> userList = new ArrayList<User>();
 		userList = FileTool.loadUser();
@@ -132,30 +132,30 @@ public class FrmGetOneCard extends JFrame {
 		});
 	}
 
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
 
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/getonecardbackground.jpg");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 
 	/**
-	 * ¸ù¾İid·µ»ØÕâ¸öuser
+	 * æ ¹æ®idè¿”å›è¿™ä¸ªuser
 	 */
 	private User getUser(String id) {
 		User user1 = new User();

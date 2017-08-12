@@ -1,16 +1,16 @@
 package com.he.myfgo.model;
 /**
- * fgoµÄ¿¨Æ¬Àà
+ * fgoçš„å¡ç‰‡ç±»
  * 
  * @author luna
  * @version 1.0
  * */
 public class Card implements Comparable<Card>{
-	/** ¿¨Æ¬id */
+	/** å¡ç‰‡id */
 	private int id;
-	/** ¿¨Æ¬Â·¾¶ */
+	/** å¡ç‰‡è·¯å¾„ */
 	private String imageId;
-	/** ¿¨Æ¬½ğ¶î */
+	/** å¡ç‰‡é‡‘é¢ */
 	private int money;
 	
 	public Card(int id,String imageId) {
@@ -72,7 +72,7 @@ public class Card implements Comparable<Card>{
 		this.imageId = imageId;
 	}
 	/**
-	 * ¸ù¾İid°ó¶¨imageidºÍmoney
+	 * æ ¹æ®idç»‘å®šimageidå’Œmoney
 	 * */
 	public void setAll(int id){
 		switch(id){
@@ -160,13 +160,13 @@ public class Card implements Comparable<Card>{
 		}
 	}
 	/**
-	 * ÖØĞ´compareTo·½·¨½øĞĞÅÅĞò
+	 * é‡å†™compareToæ–¹æ³•è¿›è¡Œæ’åº
 	 * */
 	@Override
 	 public int compareTo(Card o) {  
-	        int i = this.getMoney() - o.getMoney();//ÏÈ°´ÕÕ¼Û¸ñÀ´ÅÅ
+	        int i = this.getMoney() - o.getMoney();//å…ˆæŒ‰ç…§ä»·æ ¼æ¥æ’
 	        if(i==0){
-	        	i = this.getId()-o.getId();//Èç¹û¼Û¸ñÏàµÈ¾Í°´ÕÕidË³ĞòÀ´ÅÅ
+	        	i = this.getId()-o.getId();//å¦‚æœä»·æ ¼ç›¸ç­‰å°±æŒ‰ç…§idé¡ºåºæ¥æ’
 	        }
 	        return i; 
 	    }  

@@ -22,38 +22,38 @@ import com.he.myfgo.model.User;
 import com.he.myfgo.tool.FileTool;
 
 /**
- * fgoµÄmasterÖ÷Ò³Ãæ
+ * fgoçš„masterä¸»é¡µé¢
  * 
  * @author luna
  * @version 1.0
  */
 public class FrmMasterFace extends JFrame implements Runnable{
-	/**Ê±¼ä*/
-	private JLabel lblTime = new JLabel("Ê±¼ä£º");
-	/**»¶Ó­ĞÅÏ¢*/
-//	private JLabel lblId = new JLabel("»¶Ó­"+getLoginUser().getNickName()+"µÄµ½À´");
+	/**æ—¶é—´*/
+	private JLabel lblTime = new JLabel("æ—¶é—´ï¼š");
+	/**æ¬¢è¿ä¿¡æ¯*/
+//	private JLabel lblId = new JLabel("æ¬¢è¿"+getLoginUser().getNickName()+"çš„åˆ°æ¥");
 	private JLabel lblId = new JLabel();
-	/**ÕË»§Óà¶îĞÅÏ¢*/
-//	private JLabel lblMoney = new JLabel("µ±Ç°Óà¶î£º"+getLoginUser().getMoney()+"µã");
+	/**è´¦æˆ·ä½™é¢ä¿¡æ¯*/
+//	private JLabel lblMoney = new JLabel("å½“å‰ä½™é¢ï¼š"+getLoginUser().getMoney()+"ç‚¹");
 	private JLabel lblMoney = new JLabel();
-	/**×ó²àÍ¼Æ¬*/
-//	private JLabel lblImageMaster = new JLabel(new ImageIcon("images/masterÄĞ.png"));
+	/**å·¦ä¾§å›¾ç‰‡*/
+//	private JLabel lblImageMaster = new JLabel(new ImageIcon("images/masterç”·.png"));
 	private JLabel lblImageMaster = null;
-	/**ĞŞ¸Ä¸öÈËĞÅÏ¢°´Å¥*/
-	private JButton btnEditInfo = new JButton("ĞŞ¸Ä¸öÈËĞÅÏ¢");
-	/**¿ªÊ¼³é¿¨*/
-	private JButton btnBegin = new JButton("¿ªÊ¼³é¿¨");
-	/**²é¿´¿¨Æ¬°´Å¥*/
-	private JButton btnSearch = new JButton("²é¿´/³öÊÛ¿¨Æ¬");
-	/** È¡Ïû°´Å¥ */
+	/**ä¿®æ”¹ä¸ªäººä¿¡æ¯æŒ‰é’®*/
+	private JButton btnEditInfo = new JButton("ä¿®æ”¹ä¸ªäººä¿¡æ¯");
+	/**å¼€å§‹æŠ½å¡*/
+	private JButton btnBegin = new JButton("å¼€å§‹æŠ½å¡");
+	/**æŸ¥çœ‹å¡ç‰‡æŒ‰é’®*/
+	private JButton btnSearch = new JButton("æŸ¥çœ‹/å‡ºå”®å¡ç‰‡");
+	/** å–æ¶ˆæŒ‰é’® */
 	private JButton btnCancel = new JButton();
-	/** ÉÏÃæÍ¼±ê */
+	/** ä¸Šé¢å›¾æ ‡ */
 	private JLabel lblImageIcon = new JLabel(new ImageIcon("images/icon.jpg"));
 	
-	/**ÄÃµ½ÉÏ¸ö½çÃæµÄid*/
+	/**æ‹¿åˆ°ä¸Šä¸ªç•Œé¢çš„id*/
 //	private String loginId;
 	private String loginId="10000";
-	/**userÊı¾İ*/
+	/**useræ•°æ®*/
 	private User user = new User();
 	/**
 	 * @return the loginId
@@ -70,7 +70,7 @@ public class FrmMasterFace extends JFrame implements Runnable{
 	
 	public FrmMasterFace(){
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("MasterÖ÷Ò³Ãæ");
+		setTitle("Masterä¸»é¡µé¢");
 		initComponents();
 		setSize(500, 360);
 		setCenter();
@@ -80,12 +80,12 @@ public class FrmMasterFace extends JFrame implements Runnable{
 		Thread thread=new Thread(this);
 		thread.start();
 	}
-	/**¹¹Ôìº¯ÊıÖØÔØ
-	 * ÎªÁËÔÚnewµÄÊ±ºò¾Í°Ñid´«½øÀ´
+	/**æ„é€ å‡½æ•°é‡è½½
+	 * ä¸ºäº†åœ¨newçš„æ—¶å€™å°±æŠŠidä¼ è¿›æ¥
 	 */
 	public FrmMasterFace(String id){
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("MasterÖ÷Ò³Ãæ");
+		setTitle("Masterä¸»é¡µé¢");
 		setLoginId(id);
 		initComponents();
 		setSize(500, 360);
@@ -96,7 +96,7 @@ public class FrmMasterFace extends JFrame implements Runnable{
 		thread.start();
 	}
 	/**
-	 * ¸ù¾İid·µ»ØÕâ¸öuser
+	 * æ ¹æ®idè¿”å›è¿™ä¸ªuser
 	 */
 	private User getUser(String id){
 		User user1=new User();
@@ -117,9 +117,9 @@ public class FrmMasterFace extends JFrame implements Runnable{
 		user = getUser(loginId);
 		
 		lblId.setBounds(280, 100, 180, 30);
-		lblId.setText("»¶Ó­  "+user.getNickName()+" µÄµ½À´");
+		lblId.setText("æ¬¢è¿  "+user.getNickName()+" çš„åˆ°æ¥");
 		lblMoney.setBounds(280, 130, 180, 30);
-		lblMoney.setText("µ±Ç°Óà¶îµã£º  "+user.getMoney()+"µã");
+		lblMoney.setText("å½“å‰ä½™é¢ç‚¹ï¼š  "+user.getMoney()+"ç‚¹");
 		
 		lblImageMaster=new JLabel(new ImageIcon("images/master"+user.getSex()+".png"));
 		lblImageMaster.setBounds(70, 53, 180, 298);
@@ -206,14 +206,14 @@ public class FrmMasterFace extends JFrame implements Runnable{
 	}
 	@Override
 	public void run() {
-		//±ØĞëÊµÏÖ½Ó¿ÚµÄrun·½·¨ - ¿ªÆôÏß³ÌÊ±£¬run·½·¨»á×Ô¶¯µ÷ÓÃ
-		//ÊéĞ´run·½·¨µÄÌ×Â·£ºËÀÑ­»·
+		//å¿…é¡»å®ç°æ¥å£çš„runæ–¹æ³• - å¼€å¯çº¿ç¨‹æ—¶ï¼Œrunæ–¹æ³•ä¼šè‡ªåŠ¨è°ƒç”¨
+		//ä¹¦å†™runæ–¹æ³•çš„å¥—è·¯ï¼šæ­»å¾ªç¯
 		while(true){
-			//Ã¿¸ô1ÃëÖÓ£¬¸üĞÂJLabel¶ÔÏóµÄÎÄ±¾
+			//æ¯éš”1ç§’é’Ÿï¼Œæ›´æ–°JLabelå¯¹è±¡çš„æ–‡æœ¬
 			Date now = new Date();
 			lblTime.setText(now.toLocaleString());
 			try {
-				Thread.sleep(1000);//ĞİÃß1000ºÁÃë
+				Thread.sleep(1000);//ä¼‘çœ 1000æ¯«ç§’
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -221,24 +221,24 @@ public class FrmMasterFace extends JFrame implements Runnable{
 		}
 		
 	}
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/fmMasterFacebackground.jpg");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 	public static void main(String[] args) {

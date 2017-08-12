@@ -26,49 +26,49 @@ import javax.swing.SwingConstants;
 import com.he.myfgo.model.User;
 import com.he.myfgo.tool.FileTool;
 /**
- * fgoµÄĞŞ¸Ä¸öÈËĞÅÏ¢Ò³Ãæ
+ * fgoçš„ä¿®æ”¹ä¸ªäººä¿¡æ¯é¡µé¢
  * 
  * @author luna
  * @version 1.0
  */
 public class FrmEditInfo extends JFrame {
-	/** ÕËºÅ */
-	private JLabel lblResgistId = new JLabel("ÕËºÅ£º");
-	/** ÕËºÅtxt */
+	/** è´¦å· */
+	private JLabel lblResgistId = new JLabel("è´¦å·ï¼š");
+	/** è´¦å·txt */
 	private JTextField txtResgistId = new JTextField();
-	/** êÇ³Æ */
-	private JLabel lblNickName = new JLabel("êÇ³Æ(×î¶àÁùÎ»)£º");
-	/** êÇ³Ætxt */
+	/** æ˜µç§° */
+	private JLabel lblNickName = new JLabel("æ˜µç§°(æœ€å¤šå…­ä½)ï¼š");
+	/** æ˜µç§°txt */
 	private JTextField txtNickName = new JTextField();
-	/** ÊÖ»úºÅÂë */
-	private JLabel lblphoNum = new JLabel("ÊÖ»úºÅÂë£º");
-	/** ÊÖ»úºÅÂëtxt */
+	/** æ‰‹æœºå·ç  */
+	private JLabel lblphoNum = new JLabel("æ‰‹æœºå·ç ï¼š");
+	/** æ‰‹æœºå·ç txt */
 	private JTextField txtPhoNum = new JTextField();
-	/** ÓÊÏä */
-	private JLabel lblEmail = new JLabel("ÓÊÏä£º");
-	/** ÓÊÏätxt */
+	/** é‚®ç®± */
+	private JLabel lblEmail = new JLabel("é‚®ç®±ï¼š");
+	/** é‚®ç®±txt */
 	private JTextField txtEmail = new JTextField();
-	/** ÄêÁä */
-	private JLabel lblAge = new JLabel("ÄêÁä£º");
-	/** ÄêÁätxt */
+	/** å¹´é¾„ */
+	private JLabel lblAge = new JLabel("å¹´é¾„ï¼š");
+	/** å¹´é¾„txt */
 	private JTextField txtAge = new JTextField();
-	/** ĞÔ±ğ */
-	private JLabel lblSex = new JLabel("ĞÔ±ğ£º");
-	/** ĞÔ±ğÑ¡Ïî */
-	private JRadioButton[] rdSex = new JRadioButton[] { new JRadioButton("ÄĞ"), new JRadioButton("Å®") };
-	/** ÕæÊµĞÕÃû */
-	private JLabel lblName = new JLabel("ÕæÊµĞÕÃû£º");
-	/** ÕæÊµĞÕÃûtxt */
+	/** æ€§åˆ« */
+	private JLabel lblSex = new JLabel("æ€§åˆ«ï¼š");
+	/** æ€§åˆ«é€‰é¡¹ */
+	private JRadioButton[] rdSex = new JRadioButton[] { new JRadioButton("ç”·"), new JRadioButton("å¥³") };
+	/** çœŸå®å§“å */
+	private JLabel lblName = new JLabel("çœŸå®å§“åï¼š");
+	/** çœŸå®å§“åtxt */
 	private JTextField txtName = new JTextField();
-	/** ×¢²á°´Å¥ */
-	private JButton btnRegister = new JButton("È·¶¨");
-	/** È¡Ïû°´Å¥ */
-	private JButton btnCancel = new JButton("È¡Ïû");
-	/** ÉÏÃæÍ¼±ê */
+	/** æ³¨å†ŒæŒ‰é’® */
+	private JButton btnRegister = new JButton("ç¡®å®š");
+	/** å–æ¶ˆæŒ‰é’® */
+	private JButton btnCancel = new JButton("å–æ¶ˆ");
+	/** ä¸Šé¢å›¾æ ‡ */
 	private JLabel lblImageIcon = new JLabel(new ImageIcon("images/icon.jpg"));
-	/** ÄÃµ½ÉÏ¸ö½çÃæµÄid */
-	private String loginId = "10000";// ÕâÀïÏÈ³õÊ¼10000ºÅÓÃ»§£¬ÕâÑù·½±ãÑéÖ¤
-	/** userÊı¾İ */
+	/** æ‹¿åˆ°ä¸Šä¸ªç•Œé¢çš„id */
+	private String loginId = "10000";// è¿™é‡Œå…ˆåˆå§‹10000å·ç”¨æˆ·ï¼Œè¿™æ ·æ–¹ä¾¿éªŒè¯
+	/** useræ•°æ® */
 	private User user = new User();
 	private FrmEditInfo me = this;
 	/**
@@ -87,11 +87,11 @@ public class FrmEditInfo extends JFrame {
 	}
 
 	/**
-	 * ÆÕÍ¨¹¹Ôìº¯Êı£¬ÓÃÓÚÑéÖ¤µ±Ç°Ò³ÃæÓÃ
+	 * æ™®é€šæ„é€ å‡½æ•°ï¼Œç”¨äºéªŒè¯å½“å‰é¡µé¢ç”¨
 	 */
 	public FrmEditInfo() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("ĞŞ¸Ä¸öÈËĞÅÏ¢½çÃæ");
+		setTitle("ä¿®æ”¹ä¸ªäººä¿¡æ¯ç•Œé¢");
 		initComponents();
 		setSize(320, 360);
 		setCenter();
@@ -100,12 +100,12 @@ public class FrmEditInfo extends JFrame {
 	}
 
 	/**
-	 * ¹¹Ôìº¯ÊıÖØÔØ ÎªÁËÔÚnewµÄÊ±ºò¾Í°Ñid´«½øÀ´ Êµ¼Ê²Ù×÷ÓÃ
+	 * æ„é€ å‡½æ•°é‡è½½ ä¸ºäº†åœ¨newçš„æ—¶å€™å°±æŠŠidä¼ è¿›æ¥ å®é™…æ“ä½œç”¨
 	 */
 	public FrmEditInfo(String id) {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("ĞŞ¸Ä¸öÈËĞÅÏ¢½çÃæ");
-		setLoginId(id);//½«ÉÏ¸ö½çÃæµÄid¸ø¸³Öµ¸øµ±Ç°ÀàµÄid
+		setTitle("ä¿®æ”¹ä¸ªäººä¿¡æ¯ç•Œé¢");
+		setLoginId(id);//å°†ä¸Šä¸ªç•Œé¢çš„idç»™èµ‹å€¼ç»™å½“å‰ç±»çš„id
 		initComponents();
 		setSize(320, 360);
 		setCenter();
@@ -114,7 +114,7 @@ public class FrmEditInfo extends JFrame {
 	}
 
 	/**
-	 * ¸ù¾İid·µ»ØÕâ¸öuser
+	 * æ ¹æ®idè¿”å›è¿™ä¸ªuser
 	 */
 	private User getUser(String id) {
 		User user1 = new User();
@@ -159,8 +159,8 @@ public class FrmEditInfo extends JFrame {
 		lblSex.setBounds(40, 250, 80, 25);
 		rdSex[0].setBounds(130, 245, 40, 20);
 		rdSex[1].setBounds(180, 245, 40, 20);
-		// System.out.println(user.getSex());//ÑéÖ¤user.getSex()
-		if ("Å®".equals(user.getSex())) {
+		// System.out.println(user.getSex());//éªŒè¯user.getSex()
+		if ("å¥³".equals(user.getSex())) {
 			rdSex[1].setSelected(true);
 		} else {
 			rdSex[0].setSelected(true);
@@ -170,7 +170,7 @@ public class FrmEditInfo extends JFrame {
 		txtName.setText(user.getName());
 
 		lblImageIcon.setBounds(80, 5, 150, 67);
-		// ÔÚ»ù±¾ĞÅÏ¢Ãæ°åÉÏÌí¼ÓĞÔ±ğ×é¼ş
+		// åœ¨åŸºæœ¬ä¿¡æ¯é¢æ¿ä¸Šæ·»åŠ æ€§åˆ«ç»„ä»¶
 		ButtonGroup groupSex = new ButtonGroup();
 		for (int i = 0; i < rdSex.length; i++) {
 			rdSex[i].setOpaque(false);
@@ -197,7 +197,7 @@ public class FrmEditInfo extends JFrame {
 
 		lblSex.setHorizontalAlignment(JLabel.RIGHT);
 
-		// ×¢²áÈ¡Ïû°´Å¥
+		// æ³¨å†Œå–æ¶ˆæŒ‰é’®
 		btnRegister.setBounds(100, 320, 72, 22);
 		btnRegister.setIcon(new ImageIcon("images/button.jpg"));
 		btnRegister.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -231,42 +231,42 @@ public class FrmEditInfo extends JFrame {
 		contentPane.add(btnRegister);
 		contentPane.add(btnCancel);
 		
-		/** êÇ³Æ¼üÅÌÊÂ¼ş */
+		/** æ˜µç§°é”®ç›˜äº‹ä»¶ */
 		txtNickName.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtNickName.setBackground(Color.WHITE);
 			}
 		});
-		/** ÕæÊµĞÕÃû¼üÅÌÊÂ¼ş */
+		/** çœŸå®å§“åé”®ç›˜äº‹ä»¶ */
 		txtName.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtName.setBackground(Color.WHITE);
 			}
 		});
-		/** ÊÖ»úºÅÂë¼üÅÌÊÂ¼ş */
+		/** æ‰‹æœºå·ç é”®ç›˜äº‹ä»¶ */
 		txtPhoNum.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtPhoNum.setBackground(Color.WHITE);
 			}
 		});
-		/** ÓÊÏä¼üÅÌÊÂ¼ş */
+		/** é‚®ç®±é”®ç›˜äº‹ä»¶ */
 		txtEmail.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtEmail.setBackground(Color.WHITE);
 			}
 		});
-		/** ÄêÁä¼üÅÌÊÂ¼ş */
+		/** å¹´é¾„é”®ç›˜äº‹ä»¶ */
 		txtAge.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtAge.setBackground(Color.WHITE);
 			}
 		});
-		/**µãÈ·¶¨°´Å¥ÊÂ¼ş*/
+		/**ç‚¹ç¡®å®šæŒ‰é’®äº‹ä»¶*/
 		btnRegister.addActionListener(new ActionListener() {
 
 			@Override
@@ -275,8 +275,8 @@ public class FrmEditInfo extends JFrame {
 
 			}
 		});
-		/**µãÈ¡Ïû°´Å¥ÊÂ¼ş
-		 * Ìø»ØmasterfaceÒ³Ãæ
+		/**ç‚¹å–æ¶ˆæŒ‰é’®äº‹ä»¶
+		 * è·³å›masterfaceé¡µé¢
 		 */
 		btnCancel.addActionListener(new ActionListener() {
 			
@@ -289,23 +289,23 @@ public class FrmEditInfo extends JFrame {
 		});
 	}
 
-	/** ×Ô¶¨Òå°´È·¶¨°´Å¥µÄÊÂ¼ş */
+	/** è‡ªå®šä¹‰æŒ‰ç¡®å®šæŒ‰é’®çš„äº‹ä»¶ */
 	protected void btnRegister_actionPerformed(ActionEvent e) {
-		// ÅĞ¶¨ºÏ·¨ĞÔ
+		// åˆ¤å®šåˆæ³•æ€§
 		boolean isSuccess = true;
-		// êÇ³ÆÑéÖ¤
+		// æ˜µç§°éªŒè¯
 		String strNickName = txtNickName.getText();
 		if ("".equals(strNickName) || strNickName.length() > 6) {
 			txtNickName.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// ÕæÊµĞÕÃûÑéÖ¤
+		// çœŸå®å§“åéªŒè¯
 		String strName = txtName.getText();
 		if ("".equals(strName) || strName.length() > 6) {
 			txtName.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// ÊÖ»úºÅÂëÑéÖ¤
+		// æ‰‹æœºå·ç éªŒè¯
 		String strPhoneNumber = txtPhoNum.getText();
 		if (strPhoneNumber.length() != 11) {
 			txtPhoNum.setBackground(Color.YELLOW);
@@ -318,13 +318,13 @@ public class FrmEditInfo extends JFrame {
 				}
 			}
 		}
-		// ÓÊÏäÑéÖ¤
+		// é‚®ç®±éªŒè¯
 		String strEmail = txtEmail.getText();
 		if (strEmail.indexOf("@") == -1 || strEmail.indexOf(".") < strEmail.indexOf("@")) {
 			txtEmail.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// ÑéÖ¤ÄêÁä±ØĞëÊÇÊı×Ö
+		// éªŒè¯å¹´é¾„å¿…é¡»æ˜¯æ•°å­—
 		String strAge = txtAge.getText();
 		if ("".equals(strAge)) {
 			strAge = "w";
@@ -332,17 +332,17 @@ public class FrmEditInfo extends JFrame {
 		}
 		for (int i = 0; i < strAge.length(); i++) {
 			if (strAge.charAt(i) < '0' || strAge.charAt(i) > '9') {
-				// ĞŞ¸ÄÄêÁäÎÄ±¾¿òµÄ±³¾°ÑÕÉ«
+				// ä¿®æ”¹å¹´é¾„æ–‡æœ¬æ¡†çš„èƒŒæ™¯é¢œè‰²
 				txtAge.setBackground(Color.YELLOW);
 				isSuccess = false;
 				return;
 			}
 		}
-		String strSex = rdSex[0].isSelected() ? "ÄĞ" : "Å®";
-		//Èç¹ûĞÅÏ¢ÎŞÎóµÄ»°
+		String strSex = rdSex[0].isSelected() ? "ç”·" : "å¥³";
+		//å¦‚æœä¿¡æ¯æ— è¯¯çš„è¯
 		if(isSuccess){
-			JOptionPane.showMessageDialog(me, "ĞŞ¸Ä³É¹¦£¡");
-			//°ÑÕâĞ©Êı¾İ·â×°µ½userÀïÃæ£¬ĞŞ¸Äuserlist£¬È»ºó±£´æÔÚÎÄ¼şÖĞ
+			JOptionPane.showMessageDialog(me, "ä¿®æ”¹æˆåŠŸï¼");
+			//æŠŠè¿™äº›æ•°æ®å°è£…åˆ°useré‡Œé¢ï¼Œä¿®æ”¹userlistï¼Œç„¶åä¿å­˜åœ¨æ–‡ä»¶ä¸­
 			User user = new User(this.user.getId(),this.user.getPassword()
 					,strName,Integer.parseInt(strAge),strSex,
 					strPhoneNumber,strNickName,strEmail,this.user.getMoney());
@@ -360,30 +360,30 @@ public class FrmEditInfo extends JFrame {
 			setVisible(false);
 		}
 		else{
-			JOptionPane.showMessageDialog(me, "ĞŞ¸ÄÊ§°Ü£¬Çë×ÔĞĞ¼ì²é£¡");
+			JOptionPane.showMessageDialog(me, "ä¿®æ”¹å¤±è´¥ï¼Œè¯·è‡ªè¡Œæ£€æŸ¥ï¼");
 		}
 
 	}
 
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
 
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/editInfobackground.gif");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 

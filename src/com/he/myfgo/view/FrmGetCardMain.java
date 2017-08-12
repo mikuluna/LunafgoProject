@@ -20,36 +20,36 @@ import com.he.myfgo.model.Card;
 import com.he.myfgo.model.User;
 import com.he.myfgo.tool.FileTool;
 /**
- * fgoµÄ³é¿¨Ö÷Ò³Ãæ
+ * fgoçš„æŠ½å¡ä¸»é¡µé¢
  * 
  * @author luna
  * @version 1.0
  */
 class FrmGetCardMain extends JFrame {
-	/** ÉÏÃæÍ¼±ê */
+	/** ä¸Šé¢å›¾æ ‡ */
 	private JLabel lblImageIcon = new JLabel(new ImageIcon("images/icon.jpg"));
-	/** »¶Ó­ĞÅÏ¢ */
+	/** æ¬¢è¿ä¿¡æ¯ */
 	private JLabel lblId = new JLabel();
-	/** ÕË»§Óà¶îĞÅÏ¢ */
+	/** è´¦æˆ·ä½™é¢ä¿¡æ¯ */
 	private JLabel lblMoney = new JLabel();
-	/** µ¥³é */
-	private JButton btnGetOneCard = new JButton("µ¥³é£¨ÏûºÄ10µã£©");
-	/** 10Á¬³é */
-	private JButton btnGetTenCards = new JButton("10Á¬³é£¨ÏûºÄ90µã£©");
-	/** ·µ»ØÖ÷Ò³Ãæ */
-	private JButton btnBackMasterFace = new JButton("·µ»ØÖ÷Ò³Ãæ");
-	/** ÄÃµ½ÉÏ¸ö½çÃæµÄid */
-	private String loginId = "10000";// ÕâÀïÏÈ³õÊ¼10000ºÅÓÃ»§£¬ÕâÑù·½±ãÑéÖ¤
-	/** userÊı¾İ */
+	/** å•æŠ½ */
+	private JButton btnGetOneCard = new JButton("å•æŠ½ï¼ˆæ¶ˆè€—10ç‚¹ï¼‰");
+	/** 10è¿æŠ½ */
+	private JButton btnGetTenCards = new JButton("10è¿æŠ½ï¼ˆæ¶ˆè€—90ç‚¹ï¼‰");
+	/** è¿”å›ä¸»é¡µé¢ */
+	private JButton btnBackMasterFace = new JButton("è¿”å›ä¸»é¡µé¢");
+	/** æ‹¿åˆ°ä¸Šä¸ªç•Œé¢çš„id */
+	private String loginId = "10000";// è¿™é‡Œå…ˆåˆå§‹10000å·ç”¨æˆ·ï¼Œè¿™æ ·æ–¹ä¾¿éªŒè¯
+	/** useræ•°æ® */
 	private User user = new User();
 	private FrmGetCardMain me = this;
 
 	/**
-	 * ÆÕÍ¨¹¹Ôìº¯Êı£¬ÓÃÓÚÑéÖ¤µ±Ç°Ò³ÃæÓÃ
+	 * æ™®é€šæ„é€ å‡½æ•°ï¼Œç”¨äºéªŒè¯å½“å‰é¡µé¢ç”¨
 	 */
 	public FrmGetCardMain() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("³é¿¨Ö÷Ò³Ãæ");
+		setTitle("æŠ½å¡ä¸»é¡µé¢");
 
 		initComponents();
 		setSize(320, 360);
@@ -59,11 +59,11 @@ class FrmGetCardMain extends JFrame {
 	}
 
 	/**
-	 * ¹¹Ôìº¯ÊıÖØÔØ ÎªÁËÔÚnewµÄÊ±ºò¾Í°Ñid´«½øÀ´ Êµ¼Ê²Ù×÷ÓÃ
+	 * æ„é€ å‡½æ•°é‡è½½ ä¸ºäº†åœ¨newçš„æ—¶å€™å°±æŠŠidä¼ è¿›æ¥ å®é™…æ“ä½œç”¨
 	 */
 	public FrmGetCardMain(String id) {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("³é¿¨Ö÷Ò³Ãæ");
+		setTitle("æŠ½å¡ä¸»é¡µé¢");
 		setLoginId(id);
 		initComponents();
 		setSize(320, 360);
@@ -79,9 +79,9 @@ class FrmGetCardMain extends JFrame {
 		user = getUser(loginId);
 
 		lblId.setBounds(95, 85, 180, 30);
-		lblId.setText("»¶Ó­  " + user.getNickName() + " µÄµ½À´");
+		lblId.setText("æ¬¢è¿  " + user.getNickName() + " çš„åˆ°æ¥");
 		lblMoney.setBounds(95, 110, 180, 30);
-		lblMoney.setText("µ±Ç°Óà¶îµã£º  " + user.getMoney() + "µã");
+		lblMoney.setText("å½“å‰ä½™é¢ç‚¹ï¼š  " + user.getMoney() + "ç‚¹");
 		lblImageIcon.setBounds(90, 5, 150, 67);
 
 		btnGetOneCard.setBounds(80, 150, 160, 40);
@@ -123,9 +123,9 @@ class FrmGetCardMain extends JFrame {
 				List<Card> cardList = new ArrayList<Card>();
 				cardList = FileTool.loadCard(user);
 				if (user.getMoney() < 10) {
-					JOptionPane.showMessageDialog(me, "²»×ã10µã£¬Çë³äÖµ£¡");
+					JOptionPane.showMessageDialog(me, "ä¸è¶³10ç‚¹ï¼Œè¯·å……å€¼ï¼");
 				} else if (cardList != null && cardList.size() > 24) {
-					JOptionPane.showMessageDialog(me, "¿¨Æ¬ÉÏÏßÎª25ÕÅ£¬Çëµ½²é¿´/··Âô¿¨Æ¬´°¿ÚÏúÊÛ¿¨Æ¬");
+					JOptionPane.showMessageDialog(me, "å¡ç‰‡ä¸Šçº¿ä¸º25å¼ ï¼Œè¯·åˆ°æŸ¥çœ‹/è´©å–å¡ç‰‡çª—å£é”€å”®å¡ç‰‡");
 				} else {
 					FrmGetOneCard fmGetOneCard = new FrmGetOneCard(user.getId());
 					setVisible(false);
@@ -139,10 +139,10 @@ class FrmGetCardMain extends JFrame {
 				List<Card> cardList = new ArrayList<Card>();
 				cardList = FileTool.loadCard(user);
 				if (user.getMoney() < 90) {
-					JOptionPane.showMessageDialog(me, "²»×ã90µã£¬Çë³äÖµ£¡");
+					JOptionPane.showMessageDialog(me, "ä¸è¶³90ç‚¹ï¼Œè¯·å……å€¼ï¼");
 				} else if (cardList != null && cardList.size() > 15) {
 					if (cardList.size() > 15) {
-						JOptionPane.showMessageDialog(me, "¿¨Æ¬ÉÏÏßÎª25ÕÅ£¬Çëµ½²é¿´/··Âô¿¨Æ¬´°¿ÚÏúÊÛ¿¨Æ¬");
+						JOptionPane.showMessageDialog(me, "å¡ç‰‡ä¸Šçº¿ä¸º25å¼ ï¼Œè¯·åˆ°æŸ¥çœ‹/è´©å–å¡ç‰‡çª—å£é”€å”®å¡ç‰‡");
 					}
 				} else {
 					FrmGetTenCard frmGetTenCard = new FrmGetTenCard(user.getId());
@@ -154,30 +154,30 @@ class FrmGetCardMain extends JFrame {
 
 	}
 
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
 
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/getcardmainbankgound.gif");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 
 	/**
-	 * ¸ù¾İid·µ»ØÕâ¸öuser
+	 * æ ¹æ®idè¿”å›è¿™ä¸ªuser
 	 */
 	private User getUser(String id) {
 		User user1 = new User();

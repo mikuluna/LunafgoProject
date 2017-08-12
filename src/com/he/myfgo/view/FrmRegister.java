@@ -27,58 +27,58 @@ import com.he.myfgo.model.User;
 import com.he.myfgo.tool.FileTool;
 
 /**
- * fgoµÄ×¢²á½çÃæ
+ * fgoçš„æ³¨å†Œç•Œé¢
  * 
  * @author luna
  * @version 1.0
  */
 public class FrmRegister extends JFrame {
-	/** ÕËºÅ */
-	private JLabel lblResgistId = new JLabel("ÕËºÅ£º");
-	/** ÕËºÅtxt */
+	/** è´¦å· */
+	private JLabel lblResgistId = new JLabel("è´¦å·ï¼š");
+	/** è´¦å·txt */
 	private JTextField txtResgistId = new JTextField();
-	/** ÃÜÂë */
-	private JLabel lblPwd1 = new JLabel("ÃÜÂë£º");
-	/** ÃÜÂëtxt */
+	/** å¯†ç  */
+	private JLabel lblPwd1 = new JLabel("å¯†ç ï¼š");
+	/** å¯†ç txt */
 	private JPasswordField txtPwd1 = new JPasswordField();
-	/** ÖØ¸´ÃÜÂë */
-	private JLabel lblPwd2 = new JLabel("ÖØ¸´ÃÜÂë£º");
-	/** ÖØ¸´ÃÜÂëtxt */
+	/** é‡å¤å¯†ç  */
+	private JLabel lblPwd2 = new JLabel("é‡å¤å¯†ç ï¼š");
+	/** é‡å¤å¯†ç txt */
 	private JPasswordField txtPwd2 = new JPasswordField();
-	/** êÇ³Æ */
-	private JLabel lblNickName = new JLabel("êÇ³Æ(×î¶àÁùÎ»)£º");
-	/** êÇ³Ætxt */
+	/** æ˜µç§° */
+	private JLabel lblNickName = new JLabel("æ˜µç§°(æœ€å¤šå…­ä½)ï¼š");
+	/** æ˜µç§°txt */
 	private JTextField txtNickName = new JTextField();
-	/** ÊÖ»úºÅÂë */
-	private JLabel lblphoNum = new JLabel("ÊÖ»úºÅÂë£º");
-	/** ÊÖ»úºÅÂëtxt */
+	/** æ‰‹æœºå·ç  */
+	private JLabel lblphoNum = new JLabel("æ‰‹æœºå·ç ï¼š");
+	/** æ‰‹æœºå·ç txt */
 	private JTextField txtPhoNum = new JTextField();
-	/** ÓÊÏä */
-	private JLabel lblEmail = new JLabel("ÓÊÏä£º");
-	/** ÓÊÏätxt */
+	/** é‚®ç®± */
+	private JLabel lblEmail = new JLabel("é‚®ç®±ï¼š");
+	/** é‚®ç®±txt */
 	JTextField txtEmail = new JTextField();
-	/** ÄêÁä */
-	private JLabel lblAge = new JLabel("ÄêÁä£º");
-	/** ÄêÁätxt */
+	/** å¹´é¾„ */
+	private JLabel lblAge = new JLabel("å¹´é¾„ï¼š");
+	/** å¹´é¾„txt */
 	private JTextField txtAge = new JTextField();
-	/** ĞÔ±ğ */
-	private JLabel lblSex = new JLabel("ĞÔ±ğ£º");
-	/** ĞÔ±ğÑ¡Ïî */
-	private JRadioButton[] rdSex = new JRadioButton[] { new JRadioButton("ÄĞ", true), new JRadioButton("Å®") };
-	/** ÕæÊµĞÕÃû */
-	private JLabel lblName = new JLabel("ÕæÊµĞÕÃû£º");
-	/** ÕæÊµĞÕÃûtxt */
+	/** æ€§åˆ« */
+	private JLabel lblSex = new JLabel("æ€§åˆ«ï¼š");
+	/** æ€§åˆ«é€‰é¡¹ */
+	private JRadioButton[] rdSex = new JRadioButton[] { new JRadioButton("ç”·", true), new JRadioButton("å¥³") };
+	/** çœŸå®å§“å */
+	private JLabel lblName = new JLabel("çœŸå®å§“åï¼š");
+	/** çœŸå®å§“åtxt */
 	private JTextField txtName = new JTextField();
-	/** ×¢²á°´Å¥ */
-	private JButton btnRegister = new JButton("×¢²á");
-	/** È¡Ïû°´Å¥ */
-	private JButton btnCancel = new JButton("È¡Ïû");
-	/** ÉÏÃæÍ¼±ê */
+	/** æ³¨å†ŒæŒ‰é’® */
+	private JButton btnRegister = new JButton("æ³¨å†Œ");
+	/** å–æ¶ˆæŒ‰é’® */
+	private JButton btnCancel = new JButton("å–æ¶ˆ");
+	/** ä¸Šé¢å›¾æ ‡ */
 	private JLabel lblImageIcon = new JLabel(new ImageIcon("images/icon.jpg"));
 
 	public FrmRegister() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("ÉêÇëĞÂºÅÂë");
+		setTitle("ç”³è¯·æ–°å·ç ");
 		initComponents();
 		setSize(320, 360);
 		setCenter();
@@ -122,7 +122,7 @@ public class FrmRegister extends JFrame {
 		txtName.setBounds(130, 285, 100, 20);
 
 		lblImageIcon.setBounds(80, 5, 150, 67);
-		// ÔÚ»ù±¾ĞÅÏ¢Ãæ°åÉÏÌí¼ÓĞÔ±ğ×é¼ş
+		// åœ¨åŸºæœ¬ä¿¡æ¯é¢æ¿ä¸Šæ·»åŠ æ€§åˆ«ç»„ä»¶
 		ButtonGroup groupSex = new ButtonGroup();
 		for (int i = 0; i < rdSex.length; i++) {
 			rdSex[i].setOpaque(false);
@@ -155,7 +155,7 @@ public class FrmRegister extends JFrame {
 
 		lblSex.setHorizontalAlignment(JLabel.RIGHT);
 
-		// ×¢²áÈ¡Ïû°´Å¥
+		// æ³¨å†Œå–æ¶ˆæŒ‰é’®
 		btnRegister.setBounds(100, 320, 72, 22);
 		btnRegister.setIcon(new ImageIcon("images/button.jpg"));
 		btnRegister.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -191,7 +191,7 @@ public class FrmRegister extends JFrame {
 		contentPane.add(btnRegister);
 		contentPane.add(btnCancel);
 
-		/** È¡Ïû°´Å¥ÍË³ö³ÌĞò */
+		/** å–æ¶ˆæŒ‰é’®é€€å‡ºç¨‹åº */
 		btnCancel.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -199,7 +199,7 @@ public class FrmRegister extends JFrame {
 				setVisible(false);
 			}
 		});
-		/** ×¢²á°´Å¥ */
+		/** æ³¨å†ŒæŒ‰é’® */
 		btnRegister.addActionListener(new ActionListener() {
 
 			@Override
@@ -208,56 +208,56 @@ public class FrmRegister extends JFrame {
 
 			}
 		});
-		/** ÕËºÅ¼üÅÌÊÂ¼ş */
+		/** è´¦å·é”®ç›˜äº‹ä»¶ */
 		txtResgistId.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtResgistId.setBackground(Color.WHITE);
 			}
 		});
-		/** ÃÜÂë¼üÅÌÊÂ¼ş */
+		/** å¯†ç é”®ç›˜äº‹ä»¶ */
 		txtPwd1.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtPwd1.setBackground(Color.WHITE);
 			}
 		});
-		/** ÔÙ´ÎÊäÈëÃÜÂë¼üÅÌÊÂ¼ş */
+		/** å†æ¬¡è¾“å…¥å¯†ç é”®ç›˜äº‹ä»¶ */
 		txtPwd2.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtPwd2.setBackground(Color.WHITE);
 			}
 		});
-		/** êÇ³Æ¼üÅÌÊÂ¼ş */
+		/** æ˜µç§°é”®ç›˜äº‹ä»¶ */
 		txtNickName.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtNickName.setBackground(Color.WHITE);
 			}
 		});
-		/** ÕæÊµĞÕÃû¼üÅÌÊÂ¼ş */
+		/** çœŸå®å§“åé”®ç›˜äº‹ä»¶ */
 		txtName.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtName.setBackground(Color.WHITE);
 			}
 		});
-		/** ÊÖ»úºÅÂë¼üÅÌÊÂ¼ş */
+		/** æ‰‹æœºå·ç é”®ç›˜äº‹ä»¶ */
 		txtPhoNum.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtPhoNum.setBackground(Color.WHITE);
 			}
 		});
-		/** ÓÊÏä¼üÅÌÊÂ¼ş */
+		/** é‚®ç®±é”®ç›˜äº‹ä»¶ */
 		txtEmail.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				txtEmail.setBackground(Color.WHITE);
 			}
 		});
-		/** ÄêÁä¼üÅÌÊÂ¼ş */
+		/** å¹´é¾„é”®ç›˜äº‹ä»¶ */
 		txtAge.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -267,41 +267,41 @@ public class FrmRegister extends JFrame {
 
 	}
 
-	/** ×Ô¶¨ÒåµÄ°´×¢²áÊ±µÄÊÂ¼ş */
+	/** è‡ªå®šä¹‰çš„æŒ‰æ³¨å†Œæ—¶çš„äº‹ä»¶ */
 	protected void btnRegister_actionPerformed(ActionEvent e) {
-		// 1.ÄÃµ½½çÃæ²ÎÊı£¬×é×°³ÉÊµÌå¶ÔÏó
+		// 1.æ‹¿åˆ°ç•Œé¢å‚æ•°ï¼Œç»„è£…æˆå®ä½“å¯¹è±¡
 		boolean isSuccess = true;
-		// ÕËºÅÑéÖ¤
+		// è´¦å·éªŒè¯
 		String strId = txtResgistId.getText();
 		if ("".equals(strId)) {
-			// ĞŞ¸ÄidÎÄ±¾¿òµÄ±³¾°ÑÕÉ«
+			// ä¿®æ”¹idæ–‡æœ¬æ¡†çš„èƒŒæ™¯é¢œè‰²
 			txtResgistId.setBackground(Color.YELLOW);
-			// ÈÃidÎÄ±¾¿ò»ñµÃ½¹µã
+			// è®©idæ–‡æœ¬æ¡†è·å¾—ç„¦ç‚¹
 			txtResgistId.grabFocus();
-			// ÉèÖÃidÎÄ±¾¿òÄÚÈİÈ«Ñ¡×´Ì¬//ÎÄ×ÖÈ«Ñ¡
+			// è®¾ç½®idæ–‡æœ¬æ¡†å†…å®¹å…¨é€‰çŠ¶æ€//æ–‡å­—å…¨é€‰
 			txtResgistId.selectAll();
 			isSuccess = false;
 		}
-		// ÕËºÅºÍÊı¾İ.txtÑéÖ¤ÕËºÅÊÇ·ñ±»×¢²á
+		// è´¦å·å’Œæ•°æ®.txtéªŒè¯è´¦å·æ˜¯å¦è¢«æ³¨å†Œ
 		List<User> userList = new ArrayList<User>();
 		userList = FileTool.loadUser();
 		if (userList != null) {
 			for (int i = 0; i < userList.size(); i++) {
 				String id = userList.get(i).getId();
 				if (id.equals(strId)) {
-					// ĞŞ¸ÄÄêÁäÎÄ±¾¿òµÄ±³¾°ÑÕÉ«
+					// ä¿®æ”¹å¹´é¾„æ–‡æœ¬æ¡†çš„èƒŒæ™¯é¢œè‰²
 					txtResgistId.setBackground(Color.YELLOW);
-					// ÈÃÄêÁäÎÄ±¾¿ò»ñµÃ½¹µã
+					// è®©å¹´é¾„æ–‡æœ¬æ¡†è·å¾—ç„¦ç‚¹
 					txtResgistId.grabFocus();
-					// ÉèÖÃÄêÇáÎÄ±¾¿òÄÚÈİÈ«Ñ¡×´Ì¬//ÎÄ×ÖÈ«Ñ¡
+					// è®¾ç½®å¹´è½»æ–‡æœ¬æ¡†å†…å®¹å…¨é€‰çŠ¶æ€//æ–‡å­—å…¨é€‰
 					txtResgistId.selectAll();
-					txtResgistId.setText("ÕËºÅÒÑ¾­±»×¢²á");
+					txtResgistId.setText("è´¦å·å·²ç»è¢«æ³¨å†Œ");
 					isSuccess = false;
 					break;
 				}
 			}
 		}
-		// ÃÜÂëÑéÖ¤
+		// å¯†ç éªŒè¯
 		String strPassword1 = new String(txtPwd1.getPassword());
 		String strPassword2 = new String(txtPwd2.getPassword());
 		if ("".equals(strPassword1)) {
@@ -317,19 +317,19 @@ public class FrmRegister extends JFrame {
 			txtPwd2.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// êÇ³ÆÑéÖ¤
+		// æ˜µç§°éªŒè¯
 		String strNickName = txtNickName.getText();
 		if ("".equals(strNickName) || strNickName.length() > 6) {
 			txtNickName.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// ÕæÊµĞÕÃûÑéÖ¤
+		// çœŸå®å§“åéªŒè¯
 		String strName = txtName.getText();
 		if ("".equals(strName) || strName.length() > 6) {
 			txtName.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// ÊÖ»úºÅÂëÑéÖ¤
+		// æ‰‹æœºå·ç éªŒè¯
 		String strPhoneNumber = txtPhoNum.getText();
 		if (strPhoneNumber.length() != 11) {
 			txtPhoNum.setBackground(Color.YELLOW);
@@ -342,13 +342,13 @@ public class FrmRegister extends JFrame {
 				}
 			}
 		}
-		// ÓÊÏäÑéÖ¤
+		// é‚®ç®±éªŒè¯
 		String strEmail = txtEmail.getText();
 		if (strEmail.indexOf("@") == -1 || strEmail.indexOf(".") < strEmail.indexOf("@")) {
 			txtEmail.setBackground(Color.YELLOW);
 			isSuccess = false;
 		}
-		// ÑéÖ¤ÄêÁä±ØĞëÊÇÊı×Ö
+		// éªŒè¯å¹´é¾„å¿…é¡»æ˜¯æ•°å­—
 		String strAge = txtAge.getText();
 		if ("".equals(strAge)) {
 			strAge = "w";
@@ -356,17 +356,17 @@ public class FrmRegister extends JFrame {
 		}
 		for (int i = 0; i < strAge.length(); i++) {
 			if (strAge.charAt(i) < '0' || strAge.charAt(i) > '9') {
-				// ĞŞ¸ÄÄêÁäÎÄ±¾¿òµÄ±³¾°ÑÕÉ«
+				// ä¿®æ”¹å¹´é¾„æ–‡æœ¬æ¡†çš„èƒŒæ™¯é¢œè‰²
 				txtAge.setBackground(Color.YELLOW);
 				isSuccess = false;
 				return;
 			}
 		}
-		String strSex = rdSex[0].isSelected() ? "ÄĞ" : "Å®";
+		String strSex = rdSex[0].isSelected() ? "ç”·" : "å¥³";
 
 		if (isSuccess) {
-			JOptionPane.showMessageDialog(me, "×¢²á³É¹¦£¡");
-			// ½«ÕâĞ©ÊôĞÔ·â×°µ½user¶ÔÏó¡£ÔÙĞ´ÈëÎÄ¼şÖĞ
+			JOptionPane.showMessageDialog(me, "æ³¨å†ŒæˆåŠŸï¼");
+			// å°†è¿™äº›å±æ€§å°è£…åˆ°userå¯¹è±¡ã€‚å†å†™å…¥æ–‡ä»¶ä¸­
 			User user = new User(strId, strPassword1, strName, Integer.parseInt(strAge), strSex, strPhoneNumber,
 					strNickName, strEmail, 100);
 			List<User> userList1 = new ArrayList<User>();
@@ -375,30 +375,30 @@ public class FrmRegister extends JFrame {
 			FrmLogin frmLogin = new FrmLogin();
 			setVisible(false);
 		} else {
-			JOptionPane.showMessageDialog(me, "×¢²áÊ§°Ü£¬Çë×ÔĞĞ¼ì²é£¡");
+			JOptionPane.showMessageDialog(me, "æ³¨å†Œå¤±è´¥ï¼Œè¯·è‡ªè¡Œæ£€æŸ¥ï¼");
 		}
 
 	}
 
-	/** ½çÃæ¾ÓÖĞ */
+	/** ç•Œé¢å±…ä¸­ */
 	public void setCenter() {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		// »ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		// è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		// µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		// å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int) ((screenSize.getWidth() - currSize.getWidth()) / 2),
 				(int) ((screenSize.getHeight() - currSize.getWidth()) / 2));
 	}
 
-	/** ÉèÖÃ±³¾°Í¼Æ¬ */
+	/** è®¾ç½®èƒŒæ™¯å›¾ç‰‡ */
 	private void setBackground() {
 		ImageIcon background = new ImageIcon("images/registerbackground.gif");
 		JLabel lblBackground = new JLabel(background);
-		// ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		// åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(lblBackground, new Integer(Integer.MIN_VALUE));
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		// ½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		// å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		((JPanel) getContentPane()).setOpaque(false);
 	}
 	

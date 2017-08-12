@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 /**
- * fgoÍü¼ÇÃÜÂëÒ³Ãæ£¨¹¦ÄÜ´ı¿ª·¢£©
+ * fgoå¿˜è®°å¯†ç é¡µé¢ï¼ˆåŠŸèƒ½å¾…å¼€å‘ï¼‰
  * 
  * @author luna
  *
@@ -17,7 +17,7 @@ public class FrmFogetPassword extends JFrame{
 	private FrmFogetPassword me = this;
 	public FrmFogetPassword() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("fgoÍü¼ÇÃÜÂë");
+		setTitle("fgoå¿˜è®°å¯†ç ");
 		setBackground();
 		initComponents();
 		setSize(320, 200);
@@ -30,28 +30,28 @@ public class FrmFogetPassword extends JFrame{
 		
 	}
 	/**
-	 * ±³¾°Í¼Æ¬
+	 * èƒŒæ™¯å›¾ç‰‡
 	 */
 	public void setBackground(){
 		ImageIcon background = new ImageIcon("images/background.jpg");
 		JLabel lblBackground = new JLabel(background);
-		//ÔÚLayeredPaneÉÏÌí¼Ó±³¾°Í¼Æ¬£¬²¢½«zÖáÉè¶¨Îª×îĞ¡
+		//åœ¨LayeredPaneä¸Šæ·»åŠ èƒŒæ™¯å›¾ç‰‡ï¼Œå¹¶å°†zè½´è®¾å®šä¸ºæœ€å°
 		this.getLayeredPane().add(
 				lblBackground, 
 				new Integer(Integer.MIN_VALUE)
 		);
 		lblBackground.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		//½«ÄÚÈİÃæ°åÉè¶¨ÎªÍ¸Ã÷
+		//å°†å†…å®¹é¢æ¿è®¾å®šä¸ºé€æ˜
 		//((JPanel)getContentPane()).setOpaque(false);
 		JPanel contentPane = (JPanel)getContentPane();
 		contentPane.setOpaque(false);
 	}
-	/**½çÃæ¾ÓÖĞ*/
+	/**ç•Œé¢å±…ä¸­*/
 	public void setCenter(){
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		//»ñµÃµ±Ç°ÆÁÄ»µÄ·Ö±æÂÊ
+		//è·å¾—å½“å‰å±å¹•çš„åˆ†è¾¨ç‡
 		Dimension screenSize = toolkit.getScreenSize();
-		//µ±Ç°Ãæ°åµÄ¿íºÍ¸ß
+		//å½“å‰é¢æ¿çš„å®½å’Œé«˜
 		Dimension currSize = getSize();
 		setLocation((int)((screenSize.getWidth() - currSize.getWidth()) / 2), (int)((screenSize.getHeight() - currSize.getWidth())/2));
 	}

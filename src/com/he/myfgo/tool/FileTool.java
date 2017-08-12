@@ -16,16 +16,16 @@ import com.he.myfgo.model.Card;
 import com.he.myfgo.model.User;
 
 /**
- * ÎÄ¼ş²Ù×÷¹¤¾ßÀà
+ * æ–‡ä»¶æ“ä½œå·¥å…·ç±»
  * 
  * @author luna
  * @version 1.0
  */
 public class FileTool {
 	/**
-	 * ´ÓÎÄ¼şÖĞ¼ÓÔØÓÃ»§Êı¾İ ½«Êı¾İ×é×°³É¼¯ºÏ²¢·µ»Ø
+	 * ä»æ–‡ä»¶ä¸­åŠ è½½ç”¨æˆ·æ•°æ® å°†æ•°æ®ç»„è£…æˆé›†åˆå¹¶è¿”å›
 	 * 
-	 * @return Èç¹û¼ÓÔØÊ§°Ü¾Í·µ»Ønull
+	 * @return å¦‚æœåŠ è½½å¤±è´¥å°±è¿”å›null
 	 */
 	public static List<User> loadUser() {
 		List<User> userList = null;
@@ -34,13 +34,13 @@ public class FileTool {
 			return userList;
 		}
 		userList = new ArrayList<User>();
-		// ³£¹æµÄ¶ÁÈ¡ÎÄ¼ş´úÂë
+		// å¸¸è§„çš„è¯»å–æ–‡ä»¶ä»£ç 
 		try {
 			FileReader fReader = new FileReader(userFile);
 			BufferedReader bReader = new BufferedReader(fReader);
 			String line = null;
 			while ((line = bReader.readLine()) != null) {
-				// ²Ù×÷¸Õ¶ÁÈ¡µÄÕâÒ»ĞĞ
+				// æ“ä½œåˆšè¯»å–çš„è¿™ä¸€è¡Œ
 				String[] strUser = line.split(",");
 				if (strUser.length == 0) {
 					break;
@@ -55,7 +55,7 @@ public class FileTool {
 				user.setNickName(strUser[6].trim());
 				user.setEmail(strUser[7].trim());
 				user.setMoney(Integer.parseInt(strUser[8].trim()));
-				// Ïò¼¯ºÏÖĞÌí¼ÓÓÃ»§¶ÔÏó
+				// å‘é›†åˆä¸­æ·»åŠ ç”¨æˆ·å¯¹è±¡
 				userList.add(user);
 			}
 			bReader.close();
@@ -69,17 +69,17 @@ public class FileTool {
 	}
 
 	/**
-	 * ½«´«ÈëµÄÓÃ»§¼¯ºÏ±£´æµ½ÎÄ±¾ÎÄ¼şÖĞ
+	 * å°†ä¼ å…¥çš„ç”¨æˆ·é›†åˆä¿å­˜åˆ°æ–‡æœ¬æ–‡ä»¶ä¸­
 	 * 
 	 * @param isAppend
-	 *            ÊÇ·ñÒÔ×·¼ÓµÄ·½Ê½±£´æÎÄ¼ş
+	 *            æ˜¯å¦ä»¥è¿½åŠ çš„æ–¹å¼ä¿å­˜æ–‡ä»¶
 	 * @return
 	 */
 	public static boolean saveUser(List<User> userList, boolean isAppend) {
 		boolean isSuccess = true;
 		if (userList == null || userList.size() == 0)
 			return false;
-		// Ğ´Èëµ½ÎÄ¼şÖĞµÄ×Ö·û´®¶ÔÏó
+		// å†™å…¥åˆ°æ–‡ä»¶ä¸­çš„å­—ç¬¦ä¸²å¯¹è±¡
 		StringBuffer strValue = new StringBuffer();
 		for (User user : userList) {
 			strValue.append(user.toString());
@@ -88,13 +88,13 @@ public class FileTool {
 		try {
 			File userFile = new File("UserInfo.txt");
 			if (userFile == null || !userFile.exists()) {
-				// Èç¹ûÎÄ¼ş²»´æÔÚ£¬´´ÔìÒ»¸öÎÄ¼ş
+				// å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œåˆ›é€ ä¸€ä¸ªæ–‡ä»¶
 				userFile.createNewFile();
 			}
-			// ÒÑ×·¼ÓµÄ·½Ê½£¬Ğ´ÈëÎÄ¼ş
+			// å·²è¿½åŠ çš„æ–¹å¼ï¼Œå†™å…¥æ–‡ä»¶
 			FileWriter fWriter = new FileWriter(userFile, isAppend);
 			BufferedWriter bWriter = new BufferedWriter(fWriter);
-			// ½«×Ö·û´®Ğ´µ½ÎÄ¼şÖĞÈ¥
+			// å°†å­—ç¬¦ä¸²å†™åˆ°æ–‡ä»¶ä¸­å»
 			bWriter.write(strValue.toString());
 			bWriter.flush();
 			bWriter.close();
@@ -109,9 +109,9 @@ public class FileTool {
 	}
 
 	/**
-	 * ´ÓÎÄ¼şÖĞ¼ÓÔØ¿¨Æ¬Êı¾İ ½«Êı¾İ×é×°³É¼¯ºÏ²¢·µ»Ø
+	 * ä»æ–‡ä»¶ä¸­åŠ è½½å¡ç‰‡æ•°æ® å°†æ•°æ®ç»„è£…æˆé›†åˆå¹¶è¿”å›
 	 * 
-	 * @return Èç¹û¼ÓÔØÊ§°Ü¾Í·µ»Ønull
+	 * @return å¦‚æœåŠ è½½å¤±è´¥å°±è¿”å›null
 	 */
 	public static List<Card> loadCard(User user) {
 		List<Card> cardList = null;
@@ -121,13 +121,13 @@ public class FileTool {
 		}
 
 		cardList = new ArrayList<>();
-		// ³£¹æ¶ÁÈ¡ÎÄ¼ş´úÂë
+		// å¸¸è§„è¯»å–æ–‡ä»¶ä»£ç 
 		try {
 			FileReader fReader = new FileReader(cardFile);
 			BufferedReader bReader = new BufferedReader(fReader);
 			String line = null;
 			while ((line = bReader.readLine()) != null) {
-				// ²Ù×÷¸Õ¶ÁµÄÕâÒ»ĞĞ
+				// æ“ä½œåˆšè¯»çš„è¿™ä¸€è¡Œ
 				String[] strCard = line.split(",");
 				if (strCard.length == 0) {
 					break;
@@ -136,7 +136,7 @@ public class FileTool {
 					for (int i = 1; i < strCard.length; i++) {
 						Card card = new Card(Integer.parseInt(strCard[i].trim()));
 						// card.setId(Integer.parseInt(strCard[i].trim()));
-						// Ïò¼¯ºÏÖĞÌí¼ÓÓÃ»§¶ÔÏó
+						// å‘é›†åˆä¸­æ·»åŠ ç”¨æˆ·å¯¹è±¡
 						cardList.add(card);
 					}
 				}
@@ -152,18 +152,18 @@ public class FileTool {
 	}
 
 	/**
-	 * ½«´«ÈëµÄ¿¨Æ¬¼¯ºÏ±£´æµ½ÎÄ±¾ÎÄ¼şÖĞ
+	 * å°†ä¼ å…¥çš„å¡ç‰‡é›†åˆä¿å­˜åˆ°æ–‡æœ¬æ–‡ä»¶ä¸­
 	 * 
 	 * @param isAppend
-	 *            ÊÇ·ñÒÔ×·¼ÓµÄ·½Ê½±£´æÎÄ¼ş
-	 * @return ÊÇ·ñ±£´æ³É¹¦
+	 *            æ˜¯å¦ä»¥è¿½åŠ çš„æ–¹å¼ä¿å­˜æ–‡ä»¶
+	 * @return æ˜¯å¦ä¿å­˜æˆåŠŸ
 	 */
 	public static boolean saveCard(List<Card> cardList, User user, boolean isAppend) {
 		boolean isSuccess = true;
 		if (cardList == null || cardList.size() == 0) {
 			return false;
 		}
-		// Ğ´Èëµ½ÎÄ¼şÖĞÈ¥µÄ×Ö·û´®¶ÔÏó
+		// å†™å…¥åˆ°æ–‡ä»¶ä¸­å»çš„å­—ç¬¦ä¸²å¯¹è±¡
 		String[] strAllCard = null;
 		StringBuffer strCard = new StringBuffer();
 		strCard.append(user.getId() + ",");
@@ -179,17 +179,17 @@ public class FileTool {
 		try {
 			File cardFile = new File("CardInfo.txt");
 			if (cardFile == null || !cardFile.exists()) {
-				// Èç¹ûÎÄ¼ş²»´æÔÚ£¬´´½¨Ò»¸öĞÂµÄÎÄ¼ş
+				// å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œåˆ›å»ºä¸€ä¸ªæ–°çš„æ–‡ä»¶
 				cardFile.createNewFile();
 			}
-			// µ±²»ÒÔ×·¼ÓµÄ·½Ê½À´µÄ»°
+			// å½“ä¸ä»¥è¿½åŠ çš„æ–¹å¼æ¥çš„è¯
 			if (!isAppend) {
 				strCard.append("\n");
 				FileReader fReader = new FileReader(cardFile);
 				BufferedReader bReader = new BufferedReader(fReader);
 				String line = null;
 				while ((line = bReader.readLine()) != null) {
-					// ²Ù×÷¸Õ¶ÁµÄÕâÒ»ĞĞ
+					// æ“ä½œåˆšè¯»çš„è¿™ä¸€è¡Œ
 					strAllCard = line.split(",");
 					if (strAllCard.length == 0) {
 						break;
@@ -213,11 +213,11 @@ public class FileTool {
 				bReader.close();
 			}
 
-			// ÒÔ×·¼ÓµÄ·½Ê½Ğ´ÈëÎÄ¼ş
+			// ä»¥è¿½åŠ çš„æ–¹å¼å†™å…¥æ–‡ä»¶
 			FileWriter fWriter = new FileWriter(cardFile, isAppend);
 			BufferedWriter bWriter = new BufferedWriter(fWriter);
 
-			// ½«×Ö·û´®Ğ´µ½ÎÄ¼şÖĞÈ¥
+			// å°†å­—ç¬¦ä¸²å†™åˆ°æ–‡ä»¶ä¸­å»
 			bWriter.write(strCard.toString());
 			bWriter.flush();
 			bWriter.close();
@@ -234,27 +234,27 @@ public class FileTool {
 	}
 
 	/**
-	 * µ±Ç°ÓÃ»§Ã»ÓĞcardÊ±£¬É¾³ıÕâ¸öÓÃ»§id
+	 * å½“å‰ç”¨æˆ·æ²¡æœ‰cardæ—¶ï¼Œåˆ é™¤è¿™ä¸ªç”¨æˆ·id
 	 * 
 	 * @param
-	 * @return ÊÇ·ñ³É¹¦
+	 * @return æ˜¯å¦æˆåŠŸ
 	 */
 	public static boolean deletCard(User user) {
 		boolean isSuccess = true;
-		// Ğ´Èëµ½ÎÄ¼şÖĞÈ¥µÄ×Ö·û´®¶ÔÏó
+		// å†™å…¥åˆ°æ–‡ä»¶ä¸­å»çš„å­—ç¬¦ä¸²å¯¹è±¡
 		String[] strAllCard = null;
 		StringBuffer strCard = new StringBuffer();
 		try {
 			File cardFile = new File("CardInfo.txt");
 			if (cardFile == null || !cardFile.exists()) {
-				// Èç¹ûÎÄ¼ş²»´æÔÚ£¬´´½¨Ò»¸öĞÂµÄÎÄ¼ş
+				// å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œåˆ›å»ºä¸€ä¸ªæ–°çš„æ–‡ä»¶
 				cardFile.createNewFile();
 			}
 			FileReader fReader = new FileReader(cardFile);
 			BufferedReader bReader = new BufferedReader(fReader);
 			String line = null;
 			while ((line = bReader.readLine()) != null) {
-				// ²Ù×÷¸Õ¶ÁµÄÕâÒ»ĞĞ
+				// æ“ä½œåˆšè¯»çš„è¿™ä¸€è¡Œ
 				strAllCard = line.split(",");
 				if (!user.getId().equals(strAllCard[0])) {
 					for (int n = 0; n < strAllCard.length; n++) {
@@ -272,11 +272,11 @@ public class FileTool {
 			fReader.close();
 			bReader.close();
 
-			// ÒÔ×·¼ÓµÄ·½Ê½Ğ´ÈëÎÄ¼ş
+			// ä»¥è¿½åŠ çš„æ–¹å¼å†™å…¥æ–‡ä»¶
 			FileWriter fWriter = new FileWriter(cardFile);
 			BufferedWriter bWriter = new BufferedWriter(fWriter);
 
-			// ½«×Ö·û´®Ğ´µ½ÎÄ¼şÖĞÈ¥
+			// å°†å­—ç¬¦ä¸²å†™åˆ°æ–‡ä»¶ä¸­å»
 			bWriter.write(strCard.toString());
 			bWriter.flush();
 			bWriter.close();
